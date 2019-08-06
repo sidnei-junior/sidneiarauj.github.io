@@ -4,13 +4,25 @@
 }
 
 /*Tags*/
+body{
+	font-size: 16px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #F3F3F3;
+}
+
 header{
 	background: #18121E;
+	/*background-image: url("img/header.png");*/
 	width: 100%;
 	height: 360px;
-	border-bottom: 5px solid #984B43;
+	border-bottom: 3px solid #984B43;
 	position: fixed;
 	top: 0;
+}
+
+nav{
+	position: fixed;
+	top:360px;
 }
 
 a{
@@ -29,7 +41,7 @@ a{
 
 .borda_icone{
 	float: left;
-	background: #233237;
+	background: #DEE0DB;
 	border-radius: 100%;
 	margin: 5px;
 	padding: 9px;
@@ -38,7 +50,7 @@ a{
 /*ID's*/
 
 #foto_perfil{
-	border: 2px solid #984B43;
+	
 	width: 200px;
 	display: block;
 	margin: 44px auto 0 auto;
