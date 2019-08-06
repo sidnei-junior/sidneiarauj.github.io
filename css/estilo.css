@@ -21,8 +21,13 @@ header{
 }
 
 nav{
-	position: fixed;
-	top:360px;
+	
+
+	width: 50%;
+	margin: 380px auto 0 auto;
+	background: #DEE0DB;
+	padding: 10px;
+	
 }
 
 a{
@@ -31,7 +36,24 @@ a{
 	height: 34px;
 
 }
+
+
+
+h4{
+	margin-bottom: 5px;
+}
+
+hr{
+	margin:10px;
+}
+
+
 /*Classes*/
+.paragrafo{
+	padding-left: 15px;
+	margin-bottom: 15px;
+}
+
 .icone{
 	width: 44px;
 	display: block;
@@ -46,6 +68,12 @@ a{
 	margin: 5px;
 	padding: 9px;
 
+}
+
+.coluna1{
+	vertical-align: top;
+	text-align: right;
+	width: 86px;
 }
 /*ID's*/
 
@@ -64,4 +92,11 @@ a{
 	height: 72px;
 	margin: 0 auto;
 
+}
+
+#msg_welcome{
+	text-align: center;
+	margin: 4px 0 14px 0;
+	font-size: 32px;
+	color: #0047AB ;
 }
