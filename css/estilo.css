@@ -30,13 +30,29 @@ nav{
 	
 }
 
+aside{
+	width: 50%;
+	margin: 20px auto 0 auto;
+	background: #DEE0DB;
+	padding: 10px;
+}
+
+footer{
+	width: 100%;
+	background: #AA9D75;
+	height: 75px;
+	margin-top: 20px;
+	padding-top: 75px; 
+	text-align: center;
+	border: 1px solid #984B43;
+}
+
 a{
 	
 	width: 34px;
 	height: 34px;
 
 }
-
 
 
 h4{
@@ -46,6 +62,7 @@ h4{
 hr{
 	margin:10px;
 }
+
 
 
 /*Classes*/
@@ -90,8 +107,6 @@ hr{
 	border-radius: 100%;
 }
 
-
-
 #redes_sociais{
 	width: 216px;
 	height: 72px;
@@ -105,3 +120,4 @@ hr{
 	font-size: 32px;
 	color: #0047AB ;
 }
+
