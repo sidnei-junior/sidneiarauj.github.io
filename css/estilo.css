@@ -12,7 +12,8 @@ body{
 
 header{
 	background: #18121E;
-	/*background-image: url("img/header.png");*/
+	/*background: url("../img/header.png");
+	background-repeat: round;*/
 	width: 100%;
 	height: 360px;
 	border-bottom: 3px solid #984B43;
