@@ -87,7 +87,6 @@ hr{
 	width: 90%;
 	margin: 10px auto 0 auto;
 	padding: 10px;
-	background: #AA9D75;
 }
 
 .summary {
@@ -102,9 +101,34 @@ hr{
 }
 
 .publication_line {
-	width: 89%;
+	width: 85%;
 	float: left;
-	background-color: #AAA;
+	background-color: #DEE0DB;
+	
+}
+
+.publication {
+	border: 1px dashed #AAA;
+	margin: 10px;
+	padding: 10px;
+}
+
+.result {
+	width: 50%;
+	margin: 0 auto 10px auto;
+}
+
+.img_result {
+	display: inline-block;
+	text-align: center;
+	margin: 0 20px 0 auto;
+	border: 1px dashed #AAA;
+}
+
+.date_publication {
+	color: #333;
+	font-size: 12px;
+	border-left: 4px solid #AAA;
 }
 
 /*ID's*/
