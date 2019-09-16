@@ -10,26 +10,9 @@ body{
 	background: #F3F3F3;
 }
 
-header{
-	background: #18121E;
-	/*background: url("../img/header.png");
-	background-repeat: round;*/
-	width: 100%;
-	height: 360px;
-	border-bottom: 3px solid #984B43;
-	position: fixed;
-	top: 0;
-}
 
-nav{
-	
 
-	width: 50%;
-	margin: 380px auto 0 auto;
-	background: #DEE0DB;
-	padding: 10px;
-	
-}
+
 
 aside{
 	width: 50%;
@@ -46,6 +29,7 @@ footer{
 	padding-top: 75px; 
 	text-align: center;
 	border: 1px solid #984B43;
+	clear: both;
 }
 
 a{
@@ -98,7 +82,50 @@ hr{
 	text-align: right;
 	width: 86px;
 }
+
+.nav_publications {
+	width: 90%;
+	margin: 10px auto 0 auto;
+	padding: 10px;
+	background: #AA9D75;
+}
+
+.summary {
+	width: 10%;
+	height: 300px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	border-radius: 7%;
+	float: left;
+	border: 3px double #AAA;
+	background-color: #DEE0DB;
+}
+
+.publication_line {
+	width: 89%;
+	float: left;
+	background-color: #AAA;
+}
+
 /*ID's*/
+
+#main_menu {
+	background: #18121E;
+	/*background: url("../img/header.png");
+	background-repeat: round;*/
+	width: 100%;
+	height: 360px;
+	border-bottom: 3px solid #984B43;
+	position: fixed;
+	top: 0;
+}
+
+#main_page {
+	width: 50%;
+	margin: 380px auto 0 auto;
+	background: #DEE0DB;
+	padding: 10px;
+}
 
 #foto_perfil{
 	
@@ -121,4 +148,26 @@ hr{
 	font-size: 32px;
 	color: #0047AB ;
 }
+
+#menu_OpenCV {
+	background: #18121E;
+	width: 100%;
+	height: 60px;
+	border-bottom: 2px solid #984B43;
+}
+
+#Title_OpenCV {
+	color: #AA9D75;
+	padding-top: 12px;
+	margin-left: 14px;
+	font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+}
+
+#title_summary {
+	text-align: center;
+	margin: 4px 0 14px 0;
+	font-size: 24px;
+	color: #0047AB ;
+}
+
 
