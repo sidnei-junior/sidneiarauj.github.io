@@ -131,6 +131,14 @@ hr{
 	border-left: 4px solid #AAA;
 }
 
+.cor_azul {
+	color: #0047AB;
+}
+
+.cor_verm {
+	color: #984B43;
+}
+
 /*ID's*/
 
 #main_menu {

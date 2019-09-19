@@ -29,15 +29,47 @@
 				
 				<section class = "publication">
 					
+					<h4 id="introducao">INTRODUÇÃO</h4>
+					<p class="paragrafo">
+							Os <span class="cor_azul">problemas</span> a seguir foram tirados do tutorial do professor Agostinho Brito 
+							para a disciplina de Processamento Digital de Imagens do Departamento de 
+							Engenharia de Computação e Automção (DCA) da Universidade Federal do Rio 
+							Grande do Norte (UFRN).
+							<br>
+							As <span class="cor_verm">soluções</span> foram desenvolvidas pelos aluno Sidnei Júnior e Massao 
+							Henrique da graduação em Engenharia Mecatrônica 
+					</p>
+
+					<div class="result">
+						<figure class="img_result">
+							<p><img src="img/perfil.jpg" width="192" height="192" alt="chesterton">
+								<figcaption>Sidnei</figcaption>
+						</figure>
+
+						<figure class="img_result">
+							<p><img src="img/chesterton_region.png" width="192" height="192" alt="chesterton_region">
+								<figcaption>Massao</figcaption>
+						</figure>
+					</div>
+					<div class="date_publication">
+						Acessar <a href="https://agostinhobritojr.github.io/tutorial/pdi/">o site</a> do professor Agostinho.
+					</div>
+				</section>
+
+				<section class = "publication">
+					
 					<h4 id="title1">1. Regiões</h4>
 					<p class="paragrafo">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-							Phasellus accumsan quam quis dolor interdum efficitur. 
-							Mauris nec nibh a tortor auctor blandit vitae id dolor. 
-							Nam quam lectus, egestas sed pretium nec, pharetra egestas metus. 
-							Nullam mi lacus, blandit in nulla sit amet, commodo suscipit dui. 
-							Mauris sodales quam tellus, sit amet commodo purus tristique scelerisque.
-							Maecenas sed turpis eu ipsum interdum tincidunt a sit amet metus.		
+						<span class="cor_azul">Problema:</span> "Implemente um programa regions.cpp. Esse programa deverá solicitar ao usuário as coordenadas 
+						de dois pontos P1 e P2 localizados dentro dos limites do tamanho da imagem e exibir que lhe 
+						for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos 
+						pelos pontos P1 e P2 será exibida com o negativo da imagem na região correspondente."
+						<br>
+						<span class="cor_verm">Solução:</span> Para tornarmos um pixel em negativo, basta recuperarmo
+						s ele, diminuir de 255 eexecutar uma operação de cálculo de módulo. Assim, tendo como base o algoritmo "pi-xel.cpp",
+						 em que uma região é escolhida e então tal região é pintada de preto, o queprecisamos fazer para o novo programa é pedir 
+						 pontosP1eP2ao usuário, definir limitesdos nossos laços, que estão aninhados, gerando um algoritmo de complexidade assintóticaO(n2)e 
+						 percorrer a região de interesse da matriz preenchendo os pixels com negativo. Oalgoritmo implementado pode ser visto na listagem abaixo.	
 					</p>
 
 					<div class="result">
@@ -60,10 +92,11 @@
 					
 						<h4 id="title2">2. Troca de regiões</h4>
 						<p class="paragrafo">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								<span class="cor_azul">Problema:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 								Phasellus accumsan quam quis dolor interdum efficitur. 
-								Mauris nec nibh a tortor auctor blandit vitae id dolor. 
-								Nam quam lectus, egestas sed pretium nec, pharetra egestas metus. 
+								Mauris nec nibh a tortor auctor blandit vitae id dolor.
+								<br>
+								<span class="cor_verm">Solução:</span>Nam quam lectus, egestas sed pretium nec, pharetra egestas metus. 
 								Nullam mi lacus, blandit in nulla sit amet, commodo suscipit dui. 
 								Mauris sodales quam tellus, sit amet commodo purus tristique scelerisque.
 								Maecenas sed turpis eu ipsum interdum tincidunt a sit amet metus.		
@@ -77,7 +110,7 @@
 	
 							<figure class="img_result">
 								<p><img src="img/chesterton_troca.png" width="192" height="192" alt="chesterton_region">
-									<figcaption>Chesterton - Negativo</figcaption>
+									<figcaption>Chesterton - Troca</figcaption>
 							</figure>
 						</div>
 						<div class="date_publication">
