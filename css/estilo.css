@@ -118,6 +118,11 @@ hr{
 	margin: 0 auto 10px auto;
 }
 
+.result_3img {
+	width: 75%;
+	margin: 0 auto 10px auto;
+}
+
 .img_result {
 	display: inline-block;
 	text-align: center;

@@ -22,6 +22,8 @@
 							<a href="#title1">1. Regiões</a><br>
 							<a href="#title2">2. Troca de regiões</a><br>
 							<a href="#title3">3. Rotulação</a><br>
+
+							<a href="#title6">6. LaplGauss</a><br>
 							<br>
 						</p>
 					
@@ -171,6 +173,51 @@
 					</div>
 					<div class="date_publication">
 						Publicado em: 20 de Setembro de 2019 às 07h30 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/3.rotulacao">Ver código</a>
+					</div>
+				</section>
+
+				<section class = "publication">
+					
+					<h4 id="title6">6. Laplace do Gaussiano</h4>
+					<p class="paragrafo">
+							<span class="cor_azul">Problema:</span> "Implemente um programa laplgauss.cpp. O programa deverá acrescentar mais uma funcionalidade ao exemplo fornecido, permitindo que seja calculado o laplaciano do gaussiano das imagens capturadas. Compare o resultado desse filtro com a simples aplicação do filtro laplaciano."
+							<br>
+							<span class="cor_verm">Solução:</span>Seguindo o algoritmo filtroespacial.cpp, 
+							acrescentamos uma flag que irá habilitar uma condicional, de forma que, dado que 
+							a flag é 0, são executados os procedimentos normais de cálculo e aplicação de 
+							filtro, no contrário, ou seja, com a flag igual a 1, isso significa que	o caso 
+							escolhido foi o de aplicação de filtro de gaussiano seguido do laplaciano. 
+							Para isso, logo no case	guardamos nas matriz mask a máscara correspondente ao 
+							filtro de Gauss, de forma que quando o algoritmo executa a condicional em que 
+							a flag é 1, já é aplicado esse filtro, guardando o resultado em result. Assim, 
+							sobrescrevemos mask com o filtro laplaciano e então aplicamos ele ao resultado 
+							anterior.
+					</p>
+
+					<div class="result_3img">
+						<figure class="img_result">
+							<p><img src="img/original.png" width="192" height="192" alt="chesterton">
+								<figcaption>Sidnei - Original</figcaption>
+						</figure>
+
+						<figure class="img_result">
+							<p><img src="img/laplace.png" width="192" height="192" alt="chesterton_region">
+								<figcaption>Sidnei - Laplace</figcaption>
+						</figure>
+
+						<figure class="img_result">
+							<p><img src="img/lapgaussinao.png" width="192" height="192" alt="chesterton_region">
+								<figcaption>Sidnei - LaplGauss</figcaption>
+						</figure>
+
+					</div>
+					<p class="paragrafo">
+						Comparando as imagens podemos ver que a aplicação do Laplaciano sobre o filtro 
+						Gaussinao permite capturar mais detalhes das bordas da imagem
+				</p>
+
+					<div class="date_publication">
+						Publicado em: 22 de Setembro de 2019 às 15h24 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/6.laplaciano_gaussiano">Ver código</a>
 					</div>
 				</section>
 
