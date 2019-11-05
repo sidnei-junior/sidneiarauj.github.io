@@ -25,6 +25,7 @@
 							<a href="#title4">4. Equalização</a><br>
 							<a href="#title6">6. LaplGauss</a><br>
 							<a href="#title7">7. Tilt-Shift</a><br>
+							<a href="#title8">8. K-Means</a><br>
 							<br>
 						</p>
 					
@@ -246,13 +247,14 @@
 						Publicado em: 22 de Setembro de 2019 às 15h24 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/6.laplaciano_gaussiano">Ver código</a>
 					</div>
 				</section>
+
 				<section class = "publication">
 
 					<h4 id="title7">7. Tilt-Shift</h4>
 
 					<p class="paragrafo">
 						<span class="cor_azul">Problema:</span> "Utilizando o programa exemplos/addweighted.cpp como referência, implemente um programa tiltshift.cpp. Três ajustes deverão ser providos na tela da interface: um ajuste para regular a altura da região central que entrará em foco; um ajuste para regular a força de decaimento da região borrada ; um ajuste para regular a posição vertical do centro da região que entrará em foco. Finalizado o programa, a imagem produzida deverá ser salva em arquivo".
-					
+						<br>
 						<span class="cor_verm">Solução:</span> Para podermos criar o efeito de Tilt-Shift temos que utilizar de três matrizes distintas combinadas. Primeiro precisamos borrar a imagem original, e para isso iremos utilizar um filtro de média,
 						pois esse borramento é importante para o ajuste do efeito. Posteriormente temos que criar uma matriz
 						ponderada por uma função já pré modelada para que possamos multiplicar elemento a elemento com a nossa matriz borrada de acordo com a região de interesse para tirar o efeito de borramento dessa região. E por ultimo precisamos aplicar o ponderamento inverso nas regiões de borda da faixa escolhida para dar um efeito suave na visualização da região não borrada em relação a região borrada, ocasionando o efeito Tilt-Shift na combinação das matrizes.
@@ -275,7 +277,54 @@
 					<div class="date_publication">
 					Publicado em: 23 de Setembro de 2019 às 16h27 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/7.tiltShift">Ver código</a>
 					</div>
-					</section>
+				</section>
+
+				<section class = "publication">
+
+					<h4 id="title8">8. K-Means</h4>
+	
+						<p class="paragrafo">
+							<span class="cor_azul">Problema:</span> "Utilizando o programa kmeans.cpp como exemplo prepare um programa exemplo onde a execução do código se dê usando o parâmetro nRodadas=1 e inciar os centros de forma aleatória usando o parâmetro KMEANS_RANDOM_CENTERS ao invés de KMEANS_PP_CENTERS. Realize 10 rodadas diferentes do algoritmo e compare as imagens produzidas. Explique porque elas podem diferir tanto.".
+							<br>
+							<span class="cor_verm">Solução:</span> Seguindo as instruções do professor e adicionando um cluster a mais em cada rodada produzimos várias imagens e concatenamos elas no gif como mostrado abaixo. Os resultados das imagens se diferenciam tanto devido ao parâmetro de aleatoriedade de onde começam os centros do algoritmo de KMeans.
+						</p>
+						
+						<div class="result2">
+
+							<figure class="img_result">
+								<p><img src="img/BK.jpg" width="300" ></p>
+								<figcaption>Combate - Original</figcaption>
+							</figure>
+
+							<figure class="img_result">
+								<p><img src="https://media.giphy.com/media/Pla9JYGCoiNhuPwgPx/giphy.gif" width="300"  ></p>
+								<figcaption>Combate - Animado</figcaption>
+							</figure>
+
+							<!--
+							<video width="320" height="240" controls>
+								<source src="img/r2d2EmPerigo.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							  </video> 
+
+							<br><br><br><br><br>
+							  			
+							
+							
+							<p><img src="https://media.giphy.com/media/Pla9JYGCoiNhuPwgPx/giphy.gif" height="300" ></p>
+
+							<p>
+								<img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+								alt="Intro Cod3r"
+								height="342" />
+							</p>
+						-->
+						</div>
+						
+						<div class="date_publication">
+						Publicado em: 05 de Novembro de 2019 às 17h54 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/7.tiltShift">Ver código</a>
+						</div>
+						</section>
 
 			</article>
 		</nav>
