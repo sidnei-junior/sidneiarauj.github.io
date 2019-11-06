@@ -1,335 +1,407 @@
 <!doctype html>
 <html lang="pt-br">
-	<head>
-		<title>OpenCV projects</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/estilo.css" />
-		<!--[if lt IE 9]>
+
+<head>
+	<title>OpenCV projects</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<!--[if lt IE 9]>
 			<script src="js/html5shiv.js"></script>
 		<![endif]-->
-		
-	</head>
-	<body>
-		<header id="menu_OpenCV">
-			<h1 id="Title_OpenCV">OpenCV_</h1>
-		</header>
 
-		<nav class = "nav_publications">
-			<article class = "summary">
-					<h3 id="title_summary">Sumário</h3>
-					<p class="paragrafo">
-							<a href="#introducao">0. Introdução</a> <br>
-							<a href="#title1">1. Regiões</a><br>
-							<a href="#title2">2. Troca de regiões</a><br>
-							<a href="#title3">3. Rotulação</a><br>
-							<a href="#title4">4. Equalização</a><br>
-							<a href="#title6">6. LaplGauss</a><br>
-							<a href="#title7">7. Tilt-Shift</a><br>
-							<a href="#title8">8. K-Means</a><br>
-							<br>
-						</p>
-					
+</head>
 
-			</article>
-			<article class = "publication_line">
-				
-				<section class = "publication">
-					
-					<h4 id="introducao">INTRODUÇÃO</h4>
-					<p class="paragrafo">
-							Os <span class="cor_azul">problemas</span> a seguir foram tirados do tutorial do professor Agostinho Brito 
-							para a disciplina de Processamento Digital de Imagens do Departamento de 
-							Engenharia de Computação e Automção (DCA) da Universidade Federal do Rio 
-							Grande do Norte (UFRN).
-							<br>
-							As <span class="cor_verm">soluções</span> foram desenvolvidas pelos aluno Sidnei Júnior e Massao 
-							Henrique da graduação em Engenharia Mecatrônica 
-					</p>
+<body>
+	<header id="menu_OpenCV">
+		<h1 id="Title_OpenCV">OpenCV_</h1>
+	</header>
 
-					<div class="result">
-						<figure class="img_result">
-							<p><img src="img/perfil.jpg" width="192" height="192" alt="chesterton">
-								<figcaption>Sidnei</figcaption>
-						</figure>
+	<nav class="nav_publications">
+		<article class="summary">
+			<h3 id="title_summary">Sumário</h3>
+			<p class="paragrafo">
+				<a href="#introducao">0. Introdução</a> <br>
+				<a href="#title1">1. Regiões</a><br>
+				<a href="#title2">2. Troca de regiões</a><br>
+				<a href="#title3">3. Rotulação</a><br>
+				<a href="#title4">4. Equalização</a><br>
+				<a href="#title6">6. LaplGauss</a><br>
+				<a href="#title7">7. Tilt-Shift</a><br>
+				<a href="#title8">8. K-Means</a><br>
+				<a href="#title8">9. CannyPoints</a><br>
+				<br>
+			</p>
 
-						<figure class="img_result">
-							<p><img src="img/massao.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Massao</figcaption>
-						</figure>
-					</div>
-					<div class="date_publication">
-						Acessar <a href="https://agostinhobritojr.github.io/tutorial/pdi/">o site</a> do professor Agostinho.
-					</div>
-				</section>
 
-				<section class = "publication">
-					
-					<h4 id="title1">1. Regiões</h4>
-					<p class="paragrafo">
-						<span class="cor_azul">Problema:</span> "Implemente um programa regions.cpp. Esse programa deverá solicitar ao usuário as coordenadas 
-						de dois pontos P1 e P2 localizados dentro dos limites do tamanho da imagem e exibir que lhe 
-						for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos 
-						pelos pontos P1 e P2 será exibida com o negativo da imagem na região correspondente."
-						<br>
-						<span class="cor_verm">Solução:</span> Para tornarmos um pixel em negativo, basta recuperarmos 
-						ele, diminuir de 255 e executar uma operação de cálculo de módulo. Assim, tendo como base o 
-						algoritmo "pixel.cpp" (do site do professor), em que uma região é escolhida e então tal região 
-						é pintada de preto, o que precisamos fazer para o novo programa é pedir pontos P1e P2 ao usuário, 
-						definir limites dos nossos laços, que estão aninhados, gerando um algoritmo de complexidade 
-						assintótica O(n2) e percorrer a região de interesse da matriz preenchendo os pixels com negativo.	
-					</p>
+		</article>
+		<article class="publication_line">
 
-					<div class="result">
-						<figure class="img_result">
-							<p><img src="img/chesterton.png" width="192" height="192" alt="chesterton">
-								<figcaption>Chesterton - Original</figcaption>
-						</figure>
+			<!--INTRODUÇÃO-->
+			<section class="publication">
 
-						<figure class="img_result">
-							<p><img src="img/chesterton_region.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Chesterton - Negativo</figcaption>
-						</figure>
-					</div>
-					<div class="date_publication">
-						Publicado em: 20 de Setembro de 2019 às 05h54 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/1.regioes">Ver código</a>
-					</div>
-				</section>
-
-				<section class = "publication">
-					
-					<h4 id="title2">2. Troca de regiões</h4>
-					<p class="paragrafo">
-							<span class="cor_azul">Problema:</span> "Implemente um programa 
-							trocaregioes.cpp. Seu programa deverá trocar os quadrantes em diagonal 
-							na imagem. Explore o uso da classe Mat e seus construtores para criar as 
-							regiões que serão trocadas."
-							<br>
-							<span class="cor_verm">Solução:</span>Inicialmente foi criado um vetor 
-							rand com quatro posições, de 0 à 3, contendo o número correpondente a 
-							cada um dos quadrantes (1,2,3,4). Posteriormente, utilizando a função 
-							"random shuffle", trocamos as posições dos elementos de rand de forma 
-							aleatória, pois precisaremos acessar esse vetor para podermos embaralhar 
-							os quadrantes originais da imagem em questão. Com isso definido, foi 
-							útlizado o contrutor de "Mat"para criar sub-matrizes que compõe a matriz de 
-							entrada da imagem, sendo essas submatrizes dividida		
-					</p>
-
-					<div class="result">
-						<figure class="img_result">
-							<p><img src="img/chesterton.png" width="192" height="192" alt="chesterton">
-								<figcaption>Chesterton - Original</figcaption>
-						</figure>
-
-						<figure class="img_result">
-							<p><img src="img/chesterton_troca.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Chesterton - Troca</figcaption>
-						</figure>
-					</div>
-					<div class="date_publication">
-						Publicado em: 20 de Setembro de 2019 às 06h15 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/2.troca_de_regioes">Ver código</a>
-					</div>
-				</section>
-
-				<section class = "publication">
-					
-					<h4 id="title3">3. Rotulação</h4>
-					<p class="paragrafo">
-							<span class="cor_azul">Problema:</span> "Observando-se o programa labeling.cpp 
-							como exemplo, é possível verificar que caso existam mais de 255 objetos na cena, 
-							o processo de rotulação poderá ficar comprometido. Identifique a situação em que 
-							isso ocorre e proponha uma solução para este problema." <br>&&<br> "Aprimore o 
-							algoritmo de contagem apresentado para identificar regiões com ou sem buracos 
-							internos que existam na cena. Assuma que objetos com mais de um buraco podem 
-							existir. Inclua suporte no seu algoritmo para não contar bolhas que tocam as 
-							bordas da imagem. Não se pode presumir, a priori, que elas tenham buracos ou não."
-							<br>
-							<span class="cor_verm">Solução:</span>Uma solução viável para o problema de excedentes de regiões da quantidade de 255 rótulos
-							é separar em categorias os objetos, e, cada	uma das categorias irá receber 
-							um tom específico de cinza. Por exemplo os objetos com buraco podem receber 
-							o tom de cinza 10, enquanto que os objetos sem buracos podem receber o tom de 
-							cinza 11, de forma que podemos ter várias categorias de objetos em 
-							nossa imagem, a saber, 256 categorias. <br>&&<br> O algorítmo para realizar 
-							a rotulação com buracos e sem buracos foi feito da seguinte forma: Primeiro 
-							foi retirado todas as bolhas que tocavam as bordas da imagem, pois dessas não 
-							é possível afirmar se tem ou não buracos. Mudamos o fundo da cena para um outro
-							tom de cinza para diferenciar dos buracos que estariam com tom de cinza 0. 
-							Percorrendo a imagem sempre que encontrarmos o tom de cinza 0 encontramos 
-							uma bolha com buraco. Se o tom de cinza anterior a esse for 255, então 
-							encontramos um objeto que ainda não foi rotulado e aplicamos o floodfill 
-							nele com um tom de cinza que especificarmos para objetos com furo. Após essa 
-							contagem percorrer mais uma única vez a imagem pintando as bolhas sem buraco com 
-							o o tom de cinza especificado para esse grupo. Por fim, contamos todas as bolhas 
-							com e sem buraco e exibimos.
-					</p>
-
-					<div class="result">
-						<figure class="img_result">
-							<p><img src="img/bolhas.png" width="192" height="192" alt="chesterton">
-								<figcaption>Bolhas - Original</figcaption>
-						</figure>
-
-						<figure class="img_result">
-							<p><img src="img/labeling.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Bolhas - Rotulado</figcaption>
-						</figure>
-					</div>
-					<div class="date_publication">
-						Publicado em: 20 de Setembro de 2019 às 07h30 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/3.rotulacao">Ver código</a>
-					</div>
-				</section>
-
-				<section class = "publication">
-					
-					<h4 id="title4">4. Equalização</h4>
-					<p class="paragrafo">
-							<span class="cor_azul">Problema:</span> "Implemente um programa equalize.cpp. Este deverá, para cada imagem capturada, realizar a equalização do histogram antes de exibir a imagem. Teste sua implementação apontando a câmera para ambientes com iluminações variadas e observando o efeito gerado. Assuma que as imagens processadas serão em tons de cinza."
-							<br>
-							<span class="cor_verm">Solução:</span> Usando a função de equalização disponivel na biblioteca do OpenCv foi realizada a operação esperada, o restante do programa seguiu a lógica do código apresentado no tutorial.
-					</p>
-
-					<div class="result">
-						<figure class="img_result">
-							<p><img src="img/habito.png" width="192" height="192" alt="chesterton">
-								<figcaption>Livro - Original</figcaption>
-						</figure>
-
-						<figure class="img_result">
-							<p><img src="img/habito_eq.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Livro - Equalizado</figcaption>
-						</figure>
-					</div>
-					<div class="date_publication">
-						Publicado em: 27 de Setembro de 2019 às 17h55 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/4.equalizacao">Ver código</a>
-					</div>
-				</section>
-
-				<section class = "publication">
-					
-					<h4 id="title6">6. Laplace do Gaussiano</h4>
-					<p class="paragrafo">
-							<span class="cor_azul">Problema:</span> "Implemente um programa laplgauss.cpp. O programa deverá acrescentar mais uma funcionalidade ao exemplo fornecido, permitindo que seja calculado o laplaciano do gaussiano das imagens capturadas. Compare o resultado desse filtro com a simples aplicação do filtro laplaciano."
-							<br>
-							<span class="cor_verm">Solução:</span>Seguindo o algoritmo filtroespacial.cpp, 
-							acrescentamos uma flag que irá habilitar uma condicional, de forma que, dado que 
-							a flag é 0, são executados os procedimentos normais de cálculo e aplicação de 
-							filtro, no contrário, ou seja, com a flag igual a 1, isso significa que	o caso 
-							escolhido foi o de aplicação de filtro de gaussiano seguido do laplaciano. 
-							Para isso, logo no case	guardamos nas matriz mask a máscara correspondente ao 
-							filtro de Gauss, de forma que quando o algoritmo executa a condicional em que 
-							a flag é 1, já é aplicado esse filtro, guardando o resultado em result. Assim, 
-							sobrescrevemos mask com o filtro laplaciano e então aplicamos ele ao resultado 
-							anterior.
-					</p>
-
-					<div class="result_3img">
-						<figure class="img_result">
-							<p><img src="img/original.png" width="192" height="192" alt="chesterton">
-								<figcaption>Sensor - Original</figcaption>
-						</figure>
-
-						<figure class="img_result">
-							<p><img src="img/laplace.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Sensor - Laplace</figcaption>
-						</figure>
-
-						<figure class="img_result">
-							<p><img src="img/lapgaussinao.png" width="192" height="192" alt="chesterton_region">
-								<figcaption>Sensor - LaplGauss</figcaption>
-						</figure>
-
-					</div>
-					<p class="paragrafo">
-						Comparando as imagens podemos ver que a aplicação do Laplaciano sobre o filtro 
-						Gaussinao permite capturar mais detalhes das bordas da imagem
+				<h4 id="introducao">INTRODUÇÃO</h4>
+				<p class="paragrafo">
+					Os <span class="cor_azul">problemas</span> a seguir foram tirados do tutorial do professor Agostinho
+					Brito
+					para a disciplina de Processamento Digital de Imagens do Departamento de
+					Engenharia de Computação e Automção (DCA) da Universidade Federal do Rio
+					Grande do Norte (UFRN).
+					<br>
+					As <span class="cor_verm">soluções</span> foram desenvolvidas pelos aluno Sidnei Júnior e Massao
+					Henrique da graduação em Engenharia Mecatrônica
 				</p>
 
-					<div class="date_publication">
-						Publicado em: 22 de Setembro de 2019 às 15h24 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/6.laplaciano_gaussiano">Ver código</a>
-					</div>
-				</section>
-
-				<section class = "publication">
-
-					<h4 id="title7">7. Tilt-Shift</h4>
-
-					<p class="paragrafo">
-						<span class="cor_azul">Problema:</span> "Utilizando o programa exemplos/addweighted.cpp como referência, implemente um programa tiltshift.cpp. Três ajustes deverão ser providos na tela da interface: um ajuste para regular a altura da região central que entrará em foco; um ajuste para regular a força de decaimento da região borrada ; um ajuste para regular a posição vertical do centro da região que entrará em foco. Finalizado o programa, a imagem produzida deverá ser salva em arquivo".
-						<br>
-						<span class="cor_verm">Solução:</span> Para podermos criar o efeito de Tilt-Shift temos que utilizar de três matrizes distintas combinadas. Primeiro precisamos borrar a imagem original, e para isso iremos utilizar um filtro de média,
-						pois esse borramento é importante para o ajuste do efeito. Posteriormente temos que criar uma matriz
-						ponderada por uma função já pré modelada para que possamos multiplicar elemento a elemento com a nossa matriz borrada de acordo com a região de interesse para tirar o efeito de borramento dessa região. E por ultimo precisamos aplicar o ponderamento inverso nas regiões de borda da faixa escolhida para dar um efeito suave na visualização da região não borrada em relação a região borrada, ocasionando o efeito Tilt-Shift na combinação das matrizes.
-						<br> As figuras a seguir mostram o antes e depois da aplicação do efeito.
-					</p>
-					
-					<div class="result">
+				<div class="result">
 					<figure class="img_result">
-					<p><img src="img/nt5.jpeg" width="192" height="192" alt="chesterton">
-					<figcaption>Paissagem - Original</figcaption>
+						<p><img src="img/perfil.jpg" width="192" height="192" alt="chesterton">
+							<figcaption>Sidnei</figcaption>
 					</figure>
-					
+
 					<figure class="img_result">
-					<p><img src="img/im1.png" width="192" height="192" alt="chesterton_region">
-					<figcaption>Paissagem - TiltShift</figcaption>
+						<p><img src="img/massao.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Massao</figcaption>
 					</figure>
-					
-					</div>
-					
-					<div class="date_publication">
-					Publicado em: 23 de Setembro de 2019 às 16h27 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/7.tiltShift">Ver código</a>
-					</div>
-				</section>
+				</div>
+				<div class="date_publication">
+					Acessar <a href="https://agostinhobritojr.github.io/tutorial/pdi/">o site</a> do professor
+					Agostinho.
+				</div>
+			</section>
 
-				<section class = "publication">
+			<!--1. Regiões-->
+			<section class="publication">
 
-					<h4 id="title8">8. K-Means</h4>
-	
-						<p class="paragrafo">
-							<span class="cor_azul">Problema:</span> "Utilizando o programa kmeans.cpp como exemplo prepare um programa exemplo onde a execução do código se dê usando o parâmetro nRodadas=1 e inciar os centros de forma aleatória usando o parâmetro KMEANS_RANDOM_CENTERS ao invés de KMEANS_PP_CENTERS. Realize 10 rodadas diferentes do algoritmo e compare as imagens produzidas. Explique porque elas podem diferir tanto.".
-							<br>
-							<span class="cor_verm">Solução:</span> Seguindo as instruções do professor e adicionando um cluster a mais em cada rodada produzimos várias imagens e concatenamos elas no gif como mostrado abaixo. Os resultados das imagens se diferenciam tanto devido ao parâmetro de aleatoriedade de onde começam os centros do algoritmo de KMeans.
-						</p>
-						
-						<div class="result2">
+				<h4 id="title1">1. Regiões</h4>
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Implemente um programa regions.cpp. Esse programa deverá
+					solicitar ao usuário as coordenadas
+					de dois pontos P1 e P2 localizados dentro dos limites do tamanho da imagem e exibir que lhe
+					for fornecida. Entretanto, a região definida pelo retângulo de vértices opostos definidos
+					pelos pontos P1 e P2 será exibida com o negativo da imagem na região correspondente."
+					<br>
+					<span class="cor_verm">Solução:</span> Para tornarmos um pixel em negativo, basta recuperarmos
+					ele, diminuir de 255 e executar uma operação de cálculo de módulo. Assim, tendo como base o
+					algoritmo "pixel.cpp" (do site do professor), em que uma região é escolhida e então tal região
+					é pintada de preto, o que precisamos fazer para o novo programa é pedir pontos P1e P2 ao usuário,
+					definir limites dos nossos laços, que estão aninhados, gerando um algoritmo de complexidade
+					assintótica O(n2) e percorrer a região de interesse da matriz preenchendo os pixels com negativo.
+				</p>
 
-							<figure class="img_result">
-								<p><img src="img/BK.jpg" width="300" ></p>
-								<figcaption>Combate - Original</figcaption>
-							</figure>
+				<div class="result">
+					<figure class="img_result">
+						<p><img src="img/chesterton.png" width="192" height="192" alt="chesterton">
+							<figcaption>Chesterton - Original</figcaption>
+					</figure>
 
-							<figure class="img_result">
-								<p><img src="https://media.giphy.com/media/Pla9JYGCoiNhuPwgPx/giphy.gif" width="300"  ></p>
-								<figcaption>Combate - Animado</figcaption>
-							</figure>
+					<figure class="img_result">
+						<p><img src="img/chesterton_region.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Chesterton - Negativo</figcaption>
+					</figure>
+				</div>
+				<div class="date_publication">
+					Publicado em: 20 de Setembro de 2019 às 05h54 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/1.regioes">Ver código</a>
+				</div>
+			</section>
 
-							<!--
-							<video width="320" height="240" controls>
-								<source src="img/r2d2EmPerigo.mp4" type="video/mp4">
-								Your browser does not support the video tag.
-							  </video> 
+			<!--2. Troca de regiões-->
+			<section class="publication">
 
-							<br><br><br><br><br>
-							  			
-							
-							
-							<p><img src="https://media.giphy.com/media/Pla9JYGCoiNhuPwgPx/giphy.gif" height="300" ></p>
+				<h4 id="title2">2. Troca de regiões</h4>
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Implemente um programa
+					trocaregioes.cpp. Seu programa deverá trocar os quadrantes em diagonal
+					na imagem. Explore o uso da classe Mat e seus construtores para criar as
+					regiões que serão trocadas."
+					<br>
+					<span class="cor_verm">Solução:</span>Inicialmente foi criado um vetor
+					rand com quatro posições, de 0 à 3, contendo o número correpondente a
+					cada um dos quadrantes (1,2,3,4). Posteriormente, utilizando a função
+					"random shuffle", trocamos as posições dos elementos de rand de forma
+					aleatória, pois precisaremos acessar esse vetor para podermos embaralhar
+					os quadrantes originais da imagem em questão. Com isso definido, foi
+					útlizado o contrutor de "Mat"para criar sub-matrizes que compõe a matriz de
+					entrada da imagem, sendo essas submatrizes dividida
+				</p>
 
-							<p>
-								<img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
-								alt="Intro Cod3r"
-								height="342" />
-							</p>
-						-->
-						</div>
-						
-						<div class="date_publication">
-						Publicado em: 05 de Novembro de 2019 às 17h54 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/7.tiltShift">Ver código</a>
-						</div>
-						</section>
+				<div class="result">
+					<figure class="img_result">
+						<p><img src="img/chesterton.png" width="192" height="192" alt="chesterton">
+							<figcaption>Chesterton - Original</figcaption>
+					</figure>
 
-			</article>
-		</nav>
-		<footer id="cr7">
-			<a href="#cr7" onclick="console.log('oi!!!')">Copyright © Sidnei Júnior 2019.</a>
-		</footer>
-	</body>
+					<figure class="img_result">
+						<p><img src="img/chesterton_troca.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Chesterton - Troca</figcaption>
+					</figure>
+				</div>
+				<div class="date_publication">
+					Publicado em: 20 de Setembro de 2019 às 06h15 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/2.troca_de_regioes">Ver código</a>
+				</div>
+			</section>
+
+			<!--3. Rotulação-->
+			<section class="publication">
+
+				<h4 id="title3">3. Rotulação</h4>
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Observando-se o programa labeling.cpp
+					como exemplo, é possível verificar que caso existam mais de 255 objetos na cena,
+					o processo de rotulação poderá ficar comprometido. Identifique a situação em que
+					isso ocorre e proponha uma solução para este problema." <br>&&<br> "Aprimore o
+					algoritmo de contagem apresentado para identificar regiões com ou sem buracos
+					internos que existam na cena. Assuma que objetos com mais de um buraco podem
+					existir. Inclua suporte no seu algoritmo para não contar bolhas que tocam as
+					bordas da imagem. Não se pode presumir, a priori, que elas tenham buracos ou não."
+					<br>
+					<span class="cor_verm">Solução:</span>Uma solução viável para o problema de excedentes de regiões da
+					quantidade de 255 rótulos
+					é separar em categorias os objetos, e, cada uma das categorias irá receber
+					um tom específico de cinza. Por exemplo os objetos com buraco podem receber
+					o tom de cinza 10, enquanto que os objetos sem buracos podem receber o tom de
+					cinza 11, de forma que podemos ter várias categorias de objetos em
+					nossa imagem, a saber, 256 categorias. <br>&&<br> O algorítmo para realizar
+					a rotulação com buracos e sem buracos foi feito da seguinte forma: Primeiro
+					foi retirado todas as bolhas que tocavam as bordas da imagem, pois dessas não
+					é possível afirmar se tem ou não buracos. Mudamos o fundo da cena para um outro
+					tom de cinza para diferenciar dos buracos que estariam com tom de cinza 0.
+					Percorrendo a imagem sempre que encontrarmos o tom de cinza 0 encontramos
+					uma bolha com buraco. Se o tom de cinza anterior a esse for 255, então
+					encontramos um objeto que ainda não foi rotulado e aplicamos o floodfill
+					nele com um tom de cinza que especificarmos para objetos com furo. Após essa
+					contagem percorrer mais uma única vez a imagem pintando as bolhas sem buraco com
+					o o tom de cinza especificado para esse grupo. Por fim, contamos todas as bolhas
+					com e sem buraco e exibimos.
+				</p>
+
+				<div class="result">
+					<figure class="img_result">
+						<p><img src="img/bolhas.png" width="192" height="192" alt="chesterton">
+							<figcaption>Bolhas - Original</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/labeling.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Bolhas - Rotulado</figcaption>
+					</figure>
+				</div>
+				<div class="date_publication">
+					Publicado em: 20 de Setembro de 2019 às 07h30 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/3.rotulacao">Ver código</a>
+				</div>
+			</section>
+
+			<!--4. Equalização-->
+			<section class="publication">
+
+				<h4 id="title4">4. Equalização</h4>
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Implemente um programa equalize.cpp. Este deverá, para cada
+					imagem capturada, realizar a equalização do histogram antes de exibir a imagem. Teste sua
+					implementação apontando a câmera para ambientes com iluminações variadas e observando o efeito
+					gerado. Assuma que as imagens processadas serão em tons de cinza."
+					<br>
+					<span class="cor_verm">Solução:</span> Usando a função de equalização disponivel na biblioteca do
+					OpenCv foi realizada a operação esperada, o restante do programa seguiu a lógica do código
+					apresentado no tutorial.
+				</p>
+
+				<div class="result">
+					<figure class="img_result">
+						<p><img src="img/habito.png" width="192" height="192" alt="chesterton">
+							<figcaption>Livro - Original</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/habito_eq.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Livro - Equalizado</figcaption>
+					</figure>
+				</div>
+				<div class="date_publication">
+					Publicado em: 27 de Setembro de 2019 às 17h55 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/4.equalizacao">Ver código</a>
+				</div>
+			</section>
+
+			<!--6. Laplace do Gaussiano-->
+			<section class="publication">
+
+				<h4 id="title6">6. Laplace do Gaussiano</h4>
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Implemente um programa laplgauss.cpp. O programa deverá
+					acrescentar mais uma funcionalidade ao exemplo fornecido, permitindo que seja calculado o laplaciano
+					do gaussiano das imagens capturadas. Compare o resultado desse filtro com a simples aplicação do
+					filtro laplaciano."
+					<br>
+					<span class="cor_verm">Solução:</span>Seguindo o algoritmo filtroespacial.cpp,
+					acrescentamos uma flag que irá habilitar uma condicional, de forma que, dado que
+					a flag é 0, são executados os procedimentos normais de cálculo e aplicação de
+					filtro, no contrário, ou seja, com a flag igual a 1, isso significa que o caso
+					escolhido foi o de aplicação de filtro de gaussiano seguido do laplaciano.
+					Para isso, logo no case guardamos nas matriz mask a máscara correspondente ao
+					filtro de Gauss, de forma que quando o algoritmo executa a condicional em que
+					a flag é 1, já é aplicado esse filtro, guardando o resultado em result. Assim,
+					sobrescrevemos mask com o filtro laplaciano e então aplicamos ele ao resultado
+					anterior.
+				</p>
+
+				<div class="result_3img">
+					<figure class="img_result">
+						<p><img src="img/original.png" width="192" height="192" alt="chesterton">
+							<figcaption>Sensor - Original</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/laplace.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Sensor - Laplace</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/lapgaussinao.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Sensor - LaplGauss</figcaption>
+					</figure>
+
+				</div>
+				<p class="paragrafo">
+					Comparando as imagens podemos ver que a aplicação do Laplaciano sobre o filtro
+					Gaussinao permite capturar mais detalhes das bordas da imagem
+				</p>
+
+				<div class="date_publication">
+					Publicado em: 22 de Setembro de 2019 às 15h24 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/6.laplaciano_gaussiano">Ver
+						código</a>
+				</div>
+			</section>
+
+			<!--7. Tilt-Shift-->
+			<section class="publication">
+
+				<h4 id="title7">7. Tilt-Shift</h4>
+
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Utilizando o programa exemplos/addweighted.cpp como
+					referência, implemente um programa tiltshift.cpp. Três ajustes deverão ser providos na tela da
+					interface: um ajuste para regular a altura da região central que entrará em foco; um ajuste para
+					regular a força de decaimento da região borrada ; um ajuste para regular a posição vertical do
+					centro da região que entrará em foco. Finalizado o programa, a imagem produzida deverá ser salva em
+					arquivo".
+					<br>
+					<span class="cor_verm">Solução:</span> Para podermos criar o efeito de Tilt-Shift temos que utilizar
+					de três matrizes distintas combinadas. Primeiro precisamos borrar a imagem original, e para isso
+					iremos utilizar um filtro de média,
+					pois esse borramento é importante para o ajuste do efeito. Posteriormente temos que criar uma matriz
+					ponderada por uma função já pré modelada para que possamos multiplicar elemento a elemento com a
+					nossa matriz borrada de acordo com a região de interesse para tirar o efeito de borramento dessa
+					região. E por ultimo precisamos aplicar o ponderamento inverso nas regiões de borda da faixa
+					escolhida para dar um efeito suave na visualização da região não borrada em relação a região
+					borrada, ocasionando o efeito Tilt-Shift na combinação das matrizes.
+					<br> As figuras a seguir mostram o antes e depois da aplicação do efeito.
+				</p>
+
+				<div class="result">
+					<figure class="img_result">
+						<p><img src="img/nt5.jpeg" width="192" height="192" alt="chesterton">
+							<figcaption>Paissagem - Original</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/im1.png" width="192" height="192" alt="chesterton_region">
+							<figcaption>Paissagem - TiltShift</figcaption>
+					</figure>
+
+				</div>
+
+				<div class="date_publication">
+					Publicado em: 23 de Setembro de 2019 às 16h27 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/7.tiltShift">Ver código</a>
+				</div>
+			</section>
+
+			<!--8. Kmeans-->
+			<section class="publication">
+
+				<h4 id="title8">8. K-Means</h4>
+
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Utilizando o programa kmeans.cpp como exemplo prepare um
+					programa exemplo onde a execução do código se dê usando o parâmetro nRodadas=1 e inciar os centros
+					de forma aleatória usando o parâmetro KMEANS_RANDOM_CENTERS ao invés de KMEANS_PP_CENTERS. Realize
+					10 rodadas diferentes do algoritmo e compare as imagens produzidas. Explique porque elas podem
+					diferir tanto.".
+					<br>
+					<span class="cor_verm">Solução:</span> Seguindo as instruções do professor e adicionando um cluster
+					a mais em cada rodada produzimos várias imagens e concatenamos elas no gif como mostrado abaixo. Os
+					resultados das imagens se diferenciam tanto devido ao parâmetro de aleatoriedade de onde começam os
+					centros do algoritmo de KMeans.
+				</p>
+
+				<div class="result2">
+
+					<figure class="img_result">
+						<p><img src="img/BK.jpg" width="300"></p>
+						<figcaption>Combate - Original</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="https://media.giphy.com/media/Pla9JYGCoiNhuPwgPx/giphy.gif" width="300"></p>
+						<figcaption>Combate - Animado</figcaption>
+					</figure>
+
+
+				</div>
+
+				<div class="date_publication">
+					Publicado em: 05 de Novembro de 2019 às 17h54 <a
+						href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/8.k_means">Ver código</a>
+				</div>
+			</section>
+
+			<!--9. CannyPoints-->
+			<section class="publication">
+
+				<h4 id="title9">9. CannyPoints</h4>
+
+				<p class="paragrafo">
+					<span class="cor_azul">Problema:</span> "Utilizando os programas exemplos/canny.cpp e exemplos/pontilhismo.cpp 
+					como referência, implemente um programa cannypoints.cpp. A idéia é usar as bordas produzidas pelo algoritmo de 
+					Canny para melhorar a qualidade da imagem pontilhista gerada. A forma como a informação de borda será usada é 
+					livre. Entretanto, são apresentadas algumas sugestões de técnicas que poderiam ser utilizadas: Desenhar pontos 
+					grandes na imagem pontilhista básica ou	Usar a posição dos pixels de borda encontrados pelo algoritmo de Canny 
+					para desenhar pontos nos respectivos locais na imagem gerada."
+					<br>
+					<span class="cor_verm">Solução:</span> Lorem Ipsum
+				</p>
+
+				<div class="result_3img">
+					<figure class="img_result">
+						<p><img src="img/boku.jpg" width="192" height="192" alt="chesterton">
+							<figcaption>Animê - Original</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/bokuB.jpg" width="192" height="192" alt="chesterton_region">
+							<figcaption>Animê - Borda</figcaption>
+					</figure>
+
+					<figure class="img_result">
+						<p><img src="img/bokuP.jpg" width="192" height="192" alt="chesterton_region">
+							<figcaption>Animê - Pontilhado</figcaption>
+					</figure>
+
+				</div>
+
+				<div class="date_publication">
+					Publicado em: 06 de Novembro de 2019 às 05h30 <a href="https://github.com/sidneiarauj/dca0120_PDI/tree/master/9.cannypoints">Ver código</a>
+				</div>
+			</section>
+
+		</article>
+	</nav>
+	<footer id="cr7">
+		<a href="#cr7" onclick="console.log('oi!!!')">Copyright © Sidnei Júnior 2019.</a>
+	</footer>
+</body>
+
 </html>
