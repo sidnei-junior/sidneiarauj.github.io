@@ -89,6 +89,13 @@ hr{
 	padding: 10px;
 }
 
+.article_final {
+	padding: 5px;
+	margin: auto;
+	width: 85%;
+	background-color: #DEE0DB;
+}
+
 .summary {
 	width: 10%;
 	height: 330px;
@@ -146,6 +153,25 @@ hr{
 
 .cor_verm {
 	color: #984B43;
+}
+
+.botao-ir {
+	border: #18121E solid 1px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	padding: 4px;
+	margin: 5px;
+	display: block;
+	width: 60px;
+	height: 20px;
+	font-weight: bold;
+	background-color: #aaa;
+}
+
+.botao-ir:hover {
+	background-color: cornflowerblue;
+	color: cornsilk;
 }
 
 /*ID's*/
